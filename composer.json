@@ -1,6 +1,6 @@
 {
     "name": "abordage/head-first-design-patterns-php",
-    "description": "Design patterns PHP implementation examples from Head First Design Patterns (2nd Edition)",
+    "description": "Design patterns PHP implementation examples from Head First Design Patterns (2020, 2nd Edition)",
     "license": "MIT",
     "type": "project",
     "keywords": [
