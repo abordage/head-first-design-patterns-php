@@ -34,7 +34,7 @@ abstract class Pizza
         echo 'Boxing ' . $this->name . "\n";
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         $strings = [];
         $strings[] = '---- ' . $this->name . ' ----';
