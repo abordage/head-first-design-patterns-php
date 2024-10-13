@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Pattern\Strategy\Duck;
 
+use Pattern\Utils\Console;
+
 class FlyRocketPowered implements FlyBehavior
 {
     public function fly(): void
     {
-        echo "I'm flying with a rocket!\n";
+        Console::getInstance()->cyan("I'm flying with a rocket!");
     }
 }

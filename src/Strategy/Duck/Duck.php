@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Pattern\Strategy\Duck;
 
+use Pattern\Utils\Console;
 use ReflectionClass;
 
 abstract class Duck
@@ -28,13 +29,13 @@ abstract class Duck
 
     protected function duckName(): void
     {
-        echo (new ReflectionClass($this))->getShortName() . ': ';
+        Console::getInstance()->write((new ReflectionClass($this))->getShortName() . ': ');
     }
 
     public function swim(): void
     {
         $this->duckName();
-        echo "All ducks float, even decoys!\n";
+        Console::getInstance()->line('All ducks float, even decoys!');
     }
 
     public function setFlyBehavior(FlyBehavior $flyBehavior): void

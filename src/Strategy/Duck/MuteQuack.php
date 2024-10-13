@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Pattern\Strategy\Duck;
 
+use Pattern\Utils\Console;
+
 class MuteQuack implements QuackBehavior
 {
     public function quack(): void
     {
-        echo "<< Silence >>\n";
+        Console::getInstance()->red('<< Silence >>');
     }
 }
