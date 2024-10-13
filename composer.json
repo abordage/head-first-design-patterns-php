@@ -5,10 +5,10 @@
     "type": "project",
     "keywords": [
         "Design Pattern PHP implementation",
-        "Decorator Pattern PHP",
-        "Singleton Pattern PHP",
-        "Observer Pattern PHP",
-        "Strategy Pattern PHP"
+        "Decorator Pattern",
+        "Singleton Pattern",
+        "Observer Pattern",
+        "Strategy Pattern"
     ],
     "authors": [
         {
@@ -17,12 +17,15 @@
         }
     ],
     "require": {
-        "php": ">=8.1"
+        "php": "^8.3"
     },
     "require-dev": {
+        "dantleech/what-changed": "^0.4.4",
         "ergebnis/composer-normalize": "^2.28",
         "friendsofphp/php-cs-fixer": "^3.11",
-        "phpstan/phpstan": "^1.8"
+        "phpstan/phpstan": "^1.8",
+        "pyrech/composer-changelogs": "^2.1",
+        "rector/rector": "^1.2"
     },
     "autoload": {
         "psr-4": {
@@ -31,15 +34,27 @@
     },
     "config": {
         "allow-plugins": {
-            "ergebnis/composer-normalize": true
-        }
+            "dantleech/what-changed": true,
+            "ergebnis/composer-normalize": true,
+            "pyrech/composer-changelogs": true
+        },
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "process-timeout": 1000,
+        "sort-packages": true
     },
     "scripts": {
-        "phpcsf": "vendor/bin/php-cs-fixer fix --diff",
-        "phpstan": "vendor/bin/phpstan analyse"
-    },
-    "scripts-descriptions": {
-        "phpcsf": "Run PHP-CS-Fixer fix",
-        "phpstan": "Run PHPStan"
+        "fix:phpcsf": "vendor/bin/php-cs-fixer fix --diff --allow-risky=yes",
+        "fix:rector": "vendor/bin/rector process",
+        "ft": [
+            "@fix:rector",
+            "@fix:phpcsf",
+            "@test:rector",
+            "@test:phpcsf",
+            "@test:phpstan"
+        ],
+        "test:phpcsf": "vendor/bin/php-cs-fixer fix --dry-run --allow-risky=yes",
+        "test:phpstan": "vendor/bin/phpstan analyse",
+        "test:rector": "vendor/bin/rector process --dry-run"
     }
 }
