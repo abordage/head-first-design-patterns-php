@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pattern\Observer\WeatherStation;
 
 class ForecastDisplay implements Observer, DisplayElement
 {
     private float $currentPressure = 29.92;
+
     private float $lastPressure;
+
     private WeatherData $weatherData;
 
     public function __construct(WeatherData $weatherData)

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pattern\Strategy\Duck;
 
 class Squeak implements QuackBehavior

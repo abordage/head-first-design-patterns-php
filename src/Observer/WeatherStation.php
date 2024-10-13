@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 // php src/Observer/WeatherStation.php
 
 require 'vendor/autoload.php';

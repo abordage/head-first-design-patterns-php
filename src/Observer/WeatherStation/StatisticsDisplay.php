@@ -1,13 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pattern\Observer\WeatherStation;
 
 class StatisticsDisplay implements Observer, DisplayElement
 {
     private float $maxTemp = 0.0;
+
     private float $minTemp = 200;
+
     private float $tempSum = 0.0;
+
     private int $numReadings = 0;
+
     private WeatherData $weatherData;
 
     public function __construct(WeatherData $weatherData)

@@ -1,10 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pattern\Observer\WeatherStation;
 
 class HeatIndexDisplay implements Observer, DisplayElement
 {
     private float $heatIndex = 0.0;
+
     private WeatherData $weatherData;
 
     public function __construct(WeatherData $weatherData)

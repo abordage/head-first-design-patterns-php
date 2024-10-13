@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pattern\Decorator\Starbuzz;
 
 class Decaf extends Beverage

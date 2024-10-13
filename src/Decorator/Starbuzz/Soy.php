@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pattern\Decorator\Starbuzz;
 
 class Soy extends CondimentDecorator

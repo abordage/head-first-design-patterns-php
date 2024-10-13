@@ -1,6 +1,11 @@
 name: PHP CS Fixer
 
-on: [ push ]
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
 
 jobs:
   php-cs-fixer:
@@ -15,7 +20,7 @@ jobs:
       - name: Run PHP CS Fixer
         uses: docker://oskarstark/php-cs-fixer-ga
         with:
-          args: --config=.php-cs-fixer.dist.php
+          args: --config=.php-cs-fixer.dist.php --allow-risky=yes
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 // php src/Strategy/Duck.php
 
 require 'vendor/autoload.php';

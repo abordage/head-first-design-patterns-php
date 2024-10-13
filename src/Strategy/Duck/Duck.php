@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pattern\Strategy\Duck;
 
 use ReflectionClass;
@@ -7,6 +9,7 @@ use ReflectionClass;
 abstract class Duck
 {
     public FlyBehavior $flyBehavior;
+
     public QuackBehavior $quackBehavior;
 
     abstract public function display(): void;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pattern\Decorator\Starbuzz;
 
 abstract class Beverage
