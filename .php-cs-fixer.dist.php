@@ -13,7 +13,7 @@ $finder = Symfony\Component\Finder\Finder::create()
 return (new PhpCsFixer\Config())
     ->setParallelConfig(PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
     ->setRules([
-        '@PSR12' => true,
+        '@PER-CS2.0' => true,
         'array_syntax' => ['syntax' => 'short'],
         'binary_operator_spaces' => true,
         'blank_line_after_namespace' => true,
