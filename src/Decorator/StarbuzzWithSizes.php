@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 // php src/Decorator/StarbuzzWithSizes.php
 
 require 'vendor/autoload.php';

@@ -1,12 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pattern\Observer\WeatherStation;
 
 class WeatherData implements Subject
 {
     private array $observers = [];
+
     private float $temperature;
+
     private float $humidity;
+
     private float $pressure;
 
     public function registerObserver(Observer $observer): void

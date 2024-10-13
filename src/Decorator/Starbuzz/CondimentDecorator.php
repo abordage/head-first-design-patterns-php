@@ -1,10 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pattern\Decorator\Starbuzz;
 
 abstract class CondimentDecorator extends Beverage
 {
     public string $description = 'Unknown Condiment';
+
     public Beverage $beverage;
 
     public function getDescription(): string
