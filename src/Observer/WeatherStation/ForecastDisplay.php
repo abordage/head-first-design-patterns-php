@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Pattern\Observer\WeatherStation;
 
+use Pattern\Utils\Console;
+
 class ForecastDisplay implements Observer, DisplayElement
 {
     private float $currentPressure = 29.92;
@@ -28,13 +30,12 @@ class ForecastDisplay implements Observer, DisplayElement
 
     public function display(): void
     {
-        echo "Forecast: ";
-        if ($this->currentPressure > $this->lastPressure) {
-            echo "Improving weather on the way!\n";
-        } elseif ($this->currentPressure == $this->lastPressure) {
-            echo "More of the same\n";
-        } elseif ($this->currentPressure < $this->lastPressure) {
-            echo "Watch out for cooler, rainy weather\n";
-        }
+        $console = Console::getInstance();
+
+        match (true) {
+            $this->currentPressure > $this->lastPressure => $console->green('Improving weather on the way!'),
+            $this->currentPressure < $this->lastPressure => $console->yellow('Watch out for cooler, rainy weather'),
+            default => $console->cyan('More of the same'),
+        };
     }
 }

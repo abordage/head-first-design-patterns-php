@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Pattern\Observer\WeatherStation;
 
+use Pattern\Utils\Console;
+
 class HeatIndexDisplay implements Observer, DisplayElement
 {
     private float $heatIndex = 0.0;
@@ -38,6 +40,6 @@ class HeatIndexDisplay implements Observer, DisplayElement
 
     public function display(): void
     {
-        echo "Heat index is " . $this->heatIndex . "\n";
+        Console::getInstance()->line(sprintf('Heat index is %s', $this->heatIndex));
     }
 }

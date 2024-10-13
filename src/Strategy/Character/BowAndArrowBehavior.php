@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Pattern\Strategy\Character;
 
+use Pattern\Utils\Console;
+
 class BowAndArrowBehavior implements WeaponBehavior
 {
     public function useWeapon(): void
     {
-        echo "use Bow\n";
+        Console::getInstance()->yellow('use Bow');
     }
 }

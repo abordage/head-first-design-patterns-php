@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Pattern\Strategy\Duck;
 
+use Pattern\Utils\Console;
+
 class ModelDuck extends Duck
 {
     public function __construct()
@@ -15,6 +17,6 @@ class ModelDuck extends Duck
     public function display(): void
     {
         $this->duckName();
-        echo "I'm a Model duck\n";
+        Console::getInstance()->line("I'm a Model duck");
     }
 }

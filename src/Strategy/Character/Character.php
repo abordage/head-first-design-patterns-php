@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Pattern\Strategy\Character;
 
+use Pattern\Utils\Console;
 use ReflectionClass;
 
 abstract class Character
@@ -23,6 +24,6 @@ abstract class Character
 
     private function characterName(): void
     {
-        echo (new ReflectionClass($this))->getShortName() . ' ';
+        Console::getInstance()->write((new ReflectionClass($this))->getShortName() . ' ');
     }
 }

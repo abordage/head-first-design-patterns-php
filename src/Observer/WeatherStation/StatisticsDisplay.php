@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Pattern\Observer\WeatherStation;
 
+use Pattern\Utils\Console;
+
 class StatisticsDisplay implements Observer, DisplayElement
 {
     private float $maxTemp = 0.0;
@@ -42,6 +44,13 @@ class StatisticsDisplay implements Observer, DisplayElement
 
     public function display(): void
     {
-        echo "Avg/Max/Min temperature = " . ($this->tempSum / $this->numReadings) . "/" . $this->maxTemp . "/" . $this->minTemp . "\n";
+        $message = sprintf(
+            'Avg/Max/Min temperature = %s/%s/%s',
+            $this->tempSum / $this->numReadings,
+            $this->maxTemp,
+            $this->minTemp,
+        );
+
+        Console::getInstance()->line($message);
     }
 }

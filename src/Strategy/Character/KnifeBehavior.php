@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Pattern\Strategy\Character;
 
+use Pattern\Utils\Console;
+
 class KnifeBehavior implements WeaponBehavior
 {
     public function useWeapon(): void
     {
-        echo "use Knife\n";
+        Console::getInstance()->magenta('use Knife');
     }
 }

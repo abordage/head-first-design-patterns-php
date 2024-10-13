@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Pattern\Strategy\Character;
 
-class SwordBehavior implements WeaponBehavior
+use Pattern\Utils\Console;
+
+readonly class SwordBehavior implements WeaponBehavior
 {
     public function useWeapon(): void
     {
-        echo "use Sword\n";
+        Console::getInstance()->cyan('Use Sword');
     }
 }

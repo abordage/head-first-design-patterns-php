@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Pattern\Observer\WeatherStation;
 
+use Pattern\Utils\Console;
+
 class CurrentConditionalDisplay implements Observer, DisplayElement
 {
     private float $temperature;
@@ -27,6 +29,7 @@ class CurrentConditionalDisplay implements Observer, DisplayElement
 
     public function display(): void
     {
-        echo "Current conditions: $this->temperature F degrees and $this->humidity% humidity\n";
+        $message = sprintf('Current conditions: %sF degrees and %s %% humidity', $this->temperature, $this->humidity);
+        Console::getInstance()->line($message);
     }
 }
